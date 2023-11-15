@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+</head>
+<body>
+    {% for msg in get_flashed_messages() %}
+    <h1><bold>{{msg}}</bold></h>
+    {% endfor %}
+    <h1>{{question.question}}</h1>
+    <form action="/answer", method="POST">
+        <p><input type="radio" name="answer" value={{choice_a}}>{{choice_a}}</p>
+        <p><input type="radio" name="answer" value={{choice_b}}>{{choice_b}}</p>
+        <!-- </select> -->
+        <button>Next</button>
+    </form>
+</body>
+</html>
